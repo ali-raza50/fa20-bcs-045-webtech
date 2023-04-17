@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function validation() {
+        var x = document.getElementById("pass").value;
+        if (x.length == 0)
+          document.getElementById("pass").style.border = "3px solid red";
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var emailid = document.getElementById("emails").value;
+        if (emailid.match(mailformat)) {
+          document.emails.focus();
+        } else {
+          document.getElementById("belowEmail").textContent =
+            "please write correct email address";
+          document.emails.focus();
+        }
+      }
+    </script>
+    <style>
+      body {
+        background: rgb(204, 105, 24);
+        background: radial-gradient(
+          circle,
+          rgb(204, 24, 123) 0%,
+          rgba(240, 166, 238, 1) 100%
+        );
+      }
+      .form {
+        border: 2px solid pink;
+        width: 300px;
+        position: relative;
+        left: 480px;
+        top: 100px;
+        padding: 100px;
+        background-color: pink;
+      }
+      #btn {
+        border: 1px solid black;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h2>Name<span style="color: red">*</span></h2>
+      <input type="text" id="name" />
+      <br />
+      <h2>password<span style="color: red">*</span></h2>
+      <input type="password" name="" id="pass" />
+      <br />
+      <h2>Email<span style="color: red">*</span></h2>
+
+      <input type="email" name="" id="emails" />
+      <br />
+      <span style="color: red" id="belowEmail"></span>
+      <br />
+      <br />
+
+      <button id="btn" onclick="validation()">Submit</button>
+    </div>
+  </body>
+</html>

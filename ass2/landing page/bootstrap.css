@@ -1,0 +1,86 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.card-body {
+  background-color: bisque;
+}
+#startNav {
+  background-color: black;
+  position: relative;
+  height: 100px;
+  position: sticky;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+#navbarSupportedContent ul {
+  margin-right: 37px;
+}
+
+#navbarSupportedContent ul li {
+  font-size: 25px;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  transform: 0.3 ease;
+  position: relative;
+}
+.nav-link:hover {
+  color: red;
+  cursor: pointer;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: orange;
+}
+
+.nav-link:hover::after {
+  background-color: orange;
+  content: "";
+  width: 60%;
+  height: 5px;
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+}
+#icon {
+  position: absolute;
+  right: 25px;
+  top: 27px;
+}
+#icon:hover {
+  cursor: pointer;
+}
+.jumbotron {
+  position: relative;
+}
+.jumbotron img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card:hover {
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1);
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+#menCollection {
+  margin-top: 100px;
+}
+.heading {
+  color: black;
+  padding: 10px;
+}
+#footer {
+  border: 2px solid red;
+  margin-top: 50px;
+}

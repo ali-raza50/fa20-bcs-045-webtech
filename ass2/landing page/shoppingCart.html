@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shopping Cart Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Shopping Cart Example</h1>
+
+    <!-- Cart display -->
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <button id="checkout-btn">Checkout</button>
+
+    <hr />
+
+    <!-- Product display -->
+    <div class="product">
+      <h2>T shirt</h2>
+      <p>Price: $10.00</p>
+      <button class="add-to-cart-btn" data-name="Product 1" data-price="10.00">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product">
+      <h2>Kurta</h2>
+      <p>Price: $20.00</p>
+      <button class="add-to-cart-btn" data-name="Product 2" data-price="20.00">
+        Add to Cart
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var cartItems = [];
+        var cartTotal = 0;
+
+        // Function to add an item to the cart
+        function addItem(name, price, quantity) {
+          for (var i = 0; i < cartItems.length; i++) {
+            if (cartItems[i].name === name) {
+              cartItems[i].quantity += quantity;
+              return;
+            }
+          }
+          var item = {
+            name: name,
+            price: price,
+            quantity: quantity,
+          };
+          cartItems.push(item);
+        }
+
+        // Function to update the cart display
+        function updateCart() {
+          // Clear the cart display
+          $("#cart-items").empty();
+
+          // Add each cart item to the display
+          for (var i = 0; i < cartItems.length; i++) {
+            var item = cartItems[i];
+            var $li = $("<li>").text(item.name + " x " + item.quantity);
+            var $span = $("<span>").text(
+              "$" + (item.price * item.quantity).toFixed(2)
+            );
+            $li.append($span);
+            $("#cart-items").append($li);
+          }
+
+          // Update the cart total display
+          $("#cart-total").text(cartTotal.toFixed(2));
+        }
+
+        // Event listener for add-to-cart buttons
+        $(".add-to-cart-btn").click(function () {
+          var $button = $(this);
+          var name = $button.data("name");
+          var price = parseFloat($button.data("price"));
+          addItem(name, price, 1);
+          cartTotal += price;
+          updateCart();
+        });
+
+        // Event listener for checkout button
+        $("#checkout-btn").click(function () {
+          alert("Thank you for your purchase!");
+          cartItems = [];
+          cartTotal = 0;
+          updateCart();
+        });
+
+        // Initialize the cart display
+        updateCart();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.gallary {
+  background: rgb(204, 105, 24);
+  background: radial-gradient(
+    circle,
+    rgba(204, 105, 24, 1) 0%,
+    rgba(240, 166, 238, 1) 100%
+  );
+}
+.images {
+  border: 1px solid gray;
+  border-radius: 5%;
+  transition: 0.5s ease;
+
+  background: rgb(204, 105, 24);
+  background: radial-gradient(
+    circle,
+    rgb(204, 24, 123) 0%,
+    rgba(240, 166, 238, 1) 100%
+  );
+  position: relative;
+}
+.image1 {
+  border: 2px solid grey;
+  border-radius: 5%;
+  width: 98.5%;
+  height: 87%;
+  position: relative;
+}
+.cata {
+  padding: 30px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* .images1 {
+  border: 2px solid gray;
+  border-radius: 5%;
+  transition: 0.5s ease;
+  background: rgb(204, 105, 24);
+  background: radial-gradient(
+    circle,
+    rgb(204, 24, 123) 0%,
+    rgba(240, 166, 238, 1) 100%
+  );
+} */
+
+.images:hover {
+  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.catagories {
+  text-align: center;
+  padding: 15px;
+
+  background: rgb(204, 105, 24);
+  background: radial-gradient(
+    circle,
+    rgba(204, 105, 24, 1) 0%,
+    rgba(240, 166, 238, 1) 100%
+  );
+}
+/* #hello {
+  border: 2px solid red;
+} */
+/* .col-sm img {
+  margin-top: 20%;
+  border-radius: 4%;
+} */
+#unlist {
+  position: relative;
+}
+#unico {
+  position: absolute;
+  top: 7px;
+  left: 295px;
+}

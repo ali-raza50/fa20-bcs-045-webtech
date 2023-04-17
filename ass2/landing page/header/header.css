@@ -1,0 +1,52 @@
+#startNav {
+  background-color: black;
+  position: relative;
+  height: 100px;
+  position: sticky;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+#navbarSupportedContent ul {
+  margin-right: 37px;
+}
+
+#navbarSupportedContent ul li {
+  font-size: 25px;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  transform: 0.3 ease;
+  position: relative;
+}
+.nav-link:hover {
+  color: red;
+  cursor: pointer;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: orange;
+}
+
+.nav-link:hover::after {
+  background-color: orange;
+  content: "";
+  width: 60%;
+  height: 5px;
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+}
+#icon {
+  position: absolute;
+  right: 25px;
+  top: 27px;
+}
+#icon:hover {
+  cursor: pointer;
+}
