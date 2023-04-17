@@ -1,78 +1,91 @@
-#imp {
-  color: red;
-  padding-left: 10px;
+body {
+  overflow-x: hidden;
 }
-#first {
-  background: #fef8d5;
+.notice {
+  border: 1px solid red;
+  background-color: red;
+  height: 30px;
 }
-.listItem ul li {
-  display: inline;
+.notice ul li {
+  position: relative;
   list-style-type: none;
-  padding-right: 10px;
-}
-.listItem ul li a {
-  color: gray;
-  font-size: 20px;
-  padding-right: 10px;
+  display: inline;
+  padding: 100px;
+  color: white;
+  animation: slide 8s linear infinite;
 }
 
-/* Hide the dropdown menu by default */
+@keyframes slide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.maindiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  max-width: 250px;
+}
+.icons {
+  position: relative;
+  left: 400px;
+}
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-.herobanner {
-  position: relative;
+.herobanner img {
+  width: 100%;
+  display: block;
 }
-#tabs {
-  /* border: 2px solid red; */
-  position: relative;
-  bottom: 82px;
-}
-#tabs1 {
-  height: 80px;
-}
-.col-3 {
-  /* border: 2px solid red; */
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.col-3:hover {
-  background: #aa9113;
-}
-.col-3 i {
-  padding: 10px;
-  color: white;
-  font-size: 40px;
-}
-.col-3 span {
-  padding: 10px;
-  color: white;
-  font-size: 30px;
-}
-#travelBox {
-  border: 1px solid red;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.innerbox1 {
-  border: 2px solid lightgray;
-  height: 85px;
-  width: 364px;
-}
-.innerbox2 {
-  border: 2px solid lightgray;
-  height: 85px;
-  width: 364px;
-}
-#button1 {
-  margin-left: 20px;
-  height: 85px;
-  width: 220px;
+.belowHero {
+  background-color: lightgray;
   text-align: center;
-  padding: 27px;
-  background-color: hsl(135, 49%, 61%);
+  padding: 10px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.line {
+  width: 40%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.belowHero1 {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.belowHero1 span {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.fouricons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+.i1 {
+  width: 10%;
 }
