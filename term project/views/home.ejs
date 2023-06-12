@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <style>
+      .filled {
+        color: yellow;
+      }
+      .card {
+        transition: transform 0.3s;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .staricon i {
+        color: gold;
+        transition: color 0.3s;
+      }
+      .staricon i:hover {
+        color: orange;
+      }
+      .card-title {
+        color: #333;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs'),{navbar} %>
+
+    <div class="jumbotron">
+      <img src="/images/j1.jpg" alt="" />
+    </div>
+
+    <!-- Men's Collection -->
+    <div class="heading text-center mt-5">
+      <h1 class="display-4">Men's Collection</h1>
+    </div>
+    <div class="container-fluid p-5">
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"
+        id="menCollection"
+      >
+        <% menCollection.forEach((element, index) => { %>
+        <div class="col">
+          <div class="card shadow">
+            <img
+              src="/images/<%= element.imgUrl %>"
+              class="card-img-top"
+              alt="Card image"
+              style="height: 25rem; object-fit: cover"
+            />
+            <div class="card-body">
+              <h4 class="card-title"><%= element.name %></h4>
+              <h4 class="card-title">Rs. <%= element.price %></h4>
+              <p class="card-text mb-0"><%= element.description %></p>
+              <div class="staricon">
+                <i class="fa fa-star" data-rating="1"></i>
+                <i class="fa fa-star" data-rating="2"></i>
+                <i class="fa fa-star" data-rating="3"></i>
+                <i class="fa fa-star" data-rating="4"></i>
+                <i class="fa fa-star" data-rating="5"></i>
+              </div>
+
+              <a href="/cart/<%= element._id %>" class="btn btn-primary mt-2"
+                >Add to Cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- Women's Collections -->
+    <div class="container-fluid p-5">
+      <div class="heading text-center mt-5">
+        <h1 class="display-4">Women's Collections</h1>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <% womenCollection.forEach((element, index) => { %>
+        <div class="col">
+          <div class="card shadow">
+            <img
+              src="/images/<%= element.imgUrl %>"
+              class="card-img-top"
+              alt="Card image"
+              style="height: 25rem; object-fit: cover"
+            />
+            <div class="card-body">
+              <h4 class="card-title"><%= element.name %></h4>
+              <h4 class="card-title">Rs. <%= element.price %></h4>
+              <p class="card-text mb-0"><%= element.description %></p>
+              <div class="staricon">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <a href="/cart/<%= element._id %>" class="btn btn-primary mt-2"
+                >Add to Cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- Women's Jewellery Sets -->
+    <div class="container-fluid p-5">
+      <div class="heading text-center mt-5">
+        <h1 class="display-4">Women's Jewellery Sets</h1>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <% jwelleryCollection.forEach((element, index) => { %>
+        <div class="col">
+          <div class="card shadow">
+            <img
+              src="/images/<%= element.imgUrl %>"
+              class="card-img-top"
+              alt="Card image"
+              style="height: 25rem; object-fit: cover"
+            />
+            <div class="card-body">
+              <h4 class="card-title"><%= element.name %></h4>
+              <h4 class="card-title">Rs. <%= element.price %></h4>
+              <p class="card-text mb-0"><%= element.description %></p>
+              <div class="staricon">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <a href="/cart/<%= element._id %>" class="btn btn-primary mt-2"
+                >Add to Cart</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>

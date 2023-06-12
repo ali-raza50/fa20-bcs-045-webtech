@@ -1,0 +1,105 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#startNav {
+  height: 100px;
+  position: sticky;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+/* #navbarSupportedContent ul {
+  position: relative;
+  left: 963px;
+} */
+
+#navbarSupportedContent ul li {
+  font-size: 25px;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+  transform: 0.3 ease;
+  position: relative;
+}
+.nav-link:hover {
+  color: red;
+  cursor: pointer;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: white;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+  background-color: darkorange;
+  content: "";
+  width: 60%;
+  height: 3px;
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  left: 0;
+
+  margin: 0 auto;
+}
+
+/* #icon {
+  position: absolute;
+  left: 347px;
+  top: 4px;
+} */
+#icon:hover {
+  cursor: pointer;
+}
+/* .card-body {
+  background-color: bisque;
+} */
+.card:hover {
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1);
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+#menCollection {
+  margin-top: 400px;
+}
+.jumbotron {
+  position: relative;
+  /* background-color: #f8f9fa; */
+  /* padding: 2rem; */
+}
+
+.jumbotron img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.heading {
+  color: black;
+  padding: 10px;
+}
+
+/* @media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    column-count: 5;
+  }
+} */

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .custom-table {
+        width: 100%;
+        background-color: #f8f9fa;
+        margin-bottom: 20px;
+      }
+      .custom-table th,
+      .custom-table td {
+        padding: 10px;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .custom-table thead {
+        background-color: #343a40;
+        color: #fff;
+      }
+      .custom-table .btn {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="container">
+      <div class="row mt-4 mb-4">
+        <div class="col-sm-8">
+          <h1><%= title %></h1>
+        </div>
+        <div class="col-sm-4 text-right">
+          <a href="/add" class="btn btn-warning mt-2">Add Items</a>
+        </div>
+      </div>
+
+      <table class="table custom-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+
+            <th>Qty</th>
+
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach(function(product) { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.qty %></td>
+            <td>
+              <a href="/delete/<%= product._id %>" class="btn btn-danger"
+                >Delete</a
+              >
+              <a href="/edit/<%= product._id %>" class="btn btn-warning"
+                >Update</a
+              >
+              <a href="/cart/<%= product._id %>" class="btn btn-primary"
+                >Add to Cart</a
+              >
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      <h1 class="mt-5">Women Collection</h1>
+      <table class="table custom-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% womenCollection.forEach(function(product) { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.qty %></td>
+            <td>
+              <a href="/delete/<%= product._id %>" class="btn btn-danger"
+                >Delete</a
+              >
+              <a href="/edit/<%= product._id %>" class="btn btn-warning"
+                >Update</a
+              >
+              <a href="/cart/<%= product._id %>" class="btn btn-primary"
+                >Add to Cart</a
+              >
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+
+      <h1 class="mt-5">Jewelry Collection</h1>
+      <table class="table custom-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% jwelleryCollection.forEach(function(product) { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.qty %></td>
+            <td>
+              <a href="/delete/<%= product._id %>" class="btn btn-danger"
+                >Delete</a
+              >
+              <a href="/edit/<%= product._id %>" class="btn btn-warning"
+                >Update</a
+              >
+              <a
+                href="/cart/<%= product._id %> "
+                id="addToCartBtn"
+                class="btn btn-primary"
+                >Add to Cart</a
+              >
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

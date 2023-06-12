@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Signup</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body
+    style="
+      /* background-image: url('/images/signupimg.jpg'); */
+      /* background-image: url('https://img.freepik.com/free-vector/gradient-futuristic-background-with-connection-concept_23-2149110798.jpg'); */
+      background-size: cover;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <%- include('../partials/navbar') %>
+    <div
+      style="
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 40px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1 style="text-align: center; color: #333">Sign Up</h1>
+      <form action="/register" method="post">
+        <div style="margin-bottom: 20px">
+          <label for="name" style="color: #333">Name</label>
+          <input
+            type="text"
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+            id="name"
+            name="name"
+            value="Ali Raza"
+            required
+          />
+        </div>
+        <div style="margin-bottom: 20px">
+          <label for="email" style="color: #333">Email</label>
+          <input
+            type="email"
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+            id="email"
+            name="email"
+            value="ar0131701@gmail.com"
+            required
+          />
+        </div>
+        <div style="margin-bottom: 20px">
+          <label for="password" style="color: #333">Password</label>
+          <input
+            type="password"
+            style="
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+            id="password"
+            name="password"
+            value="12345"
+            required
+          />
+        </div>
+        <div style="text-align: center">
+          <button
+            type="submit"
+            style="
+              background-color: #0055ff;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              padding: 10px 20px;
+              cursor: pointer;
+            "
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
